@@ -1,0 +1,25 @@
+[
+        {"ville": "Caen", "pays": "France", "region": "Europe", "activites": ["nature"], "id": 1,"temps_vol": 105, "distance_centreville": 7, "compagnies": ["Hop!"]},
+        {"ville": "Brest", "pays": "France", "region": "Europe",  "activites": ["nature"], "id": 2, "temps_vol": 115, "distance_centreville": 10, "compagnies": ["Air France"]},
+        {"ville": "Oslo", "pays": "Norvège", "region": "Europe",  "activites": ["culture", "nature"], "id": 3, "temps_vol": 175, "distance_centreville": 50, "compagnies": ["Norwegian", "SAS"]},
+        {"ville": "Koweit", "pays": "Koweit", "region": "Moyen Orient", "activites": ["culture", "plage"], "id": 4, "temps_vol": 310, "distance_centreville": 16, "compagnies": ["Kuwait Airways"]},
+        {"ville": "Bergen", "pays": "Norvège", "region": "Europe", "activites": ["nature"], "id": 5, "temps_vol": 185, "distance_centreville": 15, "compagnies": ["Norwegian"]},
+        {"ville": "Edimbourg", "pays": "Royaume-Uni", "region": "Europe", "activites": ["culture", "nature"], "id": 6, "temps_vol": 160, "distance_centreville": 13, "compagnies": ["Easyjet"]},
+        {"ville": "Londres", "pays": "Royaume-Uni", "region": "Europe", "activites": ["architecture"], "id": 7, "temps_vol": 125, "distance_centreville": 10, "compagnies": ["British Airways", "Easyjet", "Ryanair", "Jet2.com"]},
+        {"ville": "Montreal", "pays": "Canada", "region": "Amérique du Nord", "activites": ["nature", "architecture"], "id": 8, "temps_vol": 515, "distance_centreville": 20, "compagnies": ["Air Transat"]},
+        {"ville": "Dubaï", "pays": "Emirats Arabes Unis", "region": "Moyen Orient", "activites": ["plage", "architecture"], "id": 9, "temps_vol": 325, "distance_centreville": 4, "compagnies": ["Emirates"]},
+        {"ville": "Casablanca", "pays": "Maroc", "region": "Afrique du Nord", "activites": ["culture"], "id": 10, "temps_vol": 170, "distance_centreville": 30, "compagnies": ["Royal Air Maroc"]},
+        {"ville": "Calvi", "pays": "France", "region": "Europe", "activites": ["plage", "nature"], "id": 11, "temps_vol": 40, "distance_centreville": 8, "compagnies": ["Air Corsica"]},
+        {"ville": "Rennes", "pays": "France", "region": "Europe", "activites": ["nature"], "id": 12, "temps_vol": 100, "distance_centreville": 7, "compagnies": ["Volotea", "Hop!", "Easyjet"]},
+        {"ville": "Toulouse", "pays": "France", "region": "Europe", "activites": ["vie nocturne", "architecture"], "id": 13, "temps_vol": 70, "distance_centreville": 6, "compagnies": ["Easyjet", "Volotea"]},
+        {"ville": "Bordeaux", "pays": "France", "region": "Europe", "activites": ["culture"], "id": 14, "temps_vol": 85, "distance_centreville": 12, "compagnies": ["Easyjet", "Hop!"]},
+        {"ville": "Nantes", "pays": "France", "region": "Europe", "activites": ["culture"], "id": 15, "temps_vol": 95, "distance_centreville": 6, "compagnies": ["Easyjet", "Air France"]},
+        {"ville": "Bastia", "pays": "France", "region": "Europe", "activites": ["plage", "histoire", "nature"], "id": 16, "temps_vol": 50, "distance_centreville": 20, "compagnies": ["Air Corsica"]},
+        {"ville": "Lyon", "pays": "France", "region": "Europe", "activites": ["gastronomie", "culture"], "id": 17, "temps_vol": 55, "distance_centreville": 25, "compagnies": ["Hop!"]},
+        {"ville": "Paris", "pays": "France", "region": "Europe", "activites": ["culture", "architecture"], "id": 18, "temps_vol": 115, "distance_centreville": 16, "compagnies": ["Easyjet", "Air France"]},
+        {"ville": "Lisbonne", "pays": "Portugal", "region": "Europe", "activites": ["vie nocturne", "culture", "architecture"], "id": 19, "temps_vol": 155, "distance_centreville": 7, "compagnies": ["Easyjet", "TAP"]},
+        {"ville": "Barcelone", "pays": "Espagne", "region": "Europe", "activites": ["vie nocturne", "architecture"], "id": 20, "temps_vol": 80, "distance_centreville": 14, "compagnies": ["Vueling", "Easyjet"]},
+        {"ville": "Munich", "pays": "Allemagne", "region": "Europe", "activites": ["vie nocturne"], "id": 21, "temps_vol": 125, "distance_centreville": 30, "compagnies": ["Eurowings", "Lufthansa"]},
+        {"ville": "Dublin", "pays": "Irlande", "region": "Europe", "activites": ["nature"], "id": 22, "temps_vol": 160, "distance_centreville": 11, "compagnies": ["Ryanair", "Aer Lingus"]}
+
+    ]
