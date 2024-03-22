@@ -10,8 +10,14 @@ Version de python3 utilisée : 10.6
 
 import streamlit as st
 from PIL import Image
+import io
+import requests
 
-img = Image.open('https://github.com/Marmonie/OIC/blob/main/essais/P7070925.JPG')
+url_img = ('https://github.com/Marmonie/OIC/blob/main/essais/P7070925.jpg?raw=true')
+r_img = requests.get(url_img)
+if r_img.status_code == 200:
+    img = Image.open(io.BytesIO(r_img.content))
+#img = Image.open(r_img.raw)
 st.image(img, caption='Marmonie voyage')
 
 exif = img.getexif()
