@@ -11,7 +11,7 @@ Version de python3 utilisée : 10.6
 import streamlit as st
 from PIL import Image
 
-img = Image.open('P7070925.JPG')
+img = Image.open('https://github.com/Marmonie/OIC/blob/main/essais/P7070925.JPG')
 st.image(img, caption='Marmonie voyage')
 
 exif = img.getexif()
