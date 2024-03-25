@@ -25,37 +25,48 @@ if r_img.status_code == 200:
 #img = Image.open(r_img.raw)
 st.image(img, caption='Marmonie voyage')
 
-# Formulaire st.form
-with st.form("form : modif des données exif"):
+## Formulaire st.form
+#with st.form("form : modif des données exif"):
     # Première ligne
-    auteur = st.columns([1, 3])
-    auteur[0].subheader('Auteur')
-    aut = auteur[1].text_input('Qui a pris cette photo ?')
+#    auteur = st.columns([1, 3])
+#    auteur[0].subheader('Auteur')
+#    aut = auteur[1].text_input('Qui a pris cette photo ?')
 
     # Deuxième ligne
-    date = st.columns([2, 3, 3])
-    date[0].subheader('Date')
-    jour = date[1].date_input('jour')
-    heure = date[2].time_input('heure')
+#    date = st.columns([2, 3, 3])
+#    date[0].subheader('Date')
+#    jour = date[1].date_input('jour')
+#    heure = date[2].time_input('heure')
 
     # Troisième ligne
-    loc = st.columns([1, 1, 1, 1])
-    loc[0].subheader('Localisation')
-    lat = loc[1].text_input('latitude')
-    lon = loc[2].text_input('longitude')
-    alt = loc[3].text_input('altitude')
+#    loc = st.columns([1, 1, 1, 1])
+#    loc[0].subheader('Localisation')
+#    lat = loc[1].text_input('latitude')
+#    lon = loc[2].text_input('longitude')
+#    alt = loc[3].text_input('altitude')
+
+#    st.form_submit_button('Enregistrer la photo avec les nouvelles données')
+
+
+exif = img.getexif()
+# dic_form = {} # finalement inutile, remplacé par 'ligne'
+with st.form("formulaire auto de modif des données dispo"):
+    for k, v in exif.items():
+        label = ExifTags.TAGS.get(k, k)
+        ligne = st.columns([1, 1])
+        ligne[0].subheader(label)
+        if type(v) == str:
+            exif[k] = ligne[1].text_input(f"{k}, donnée originale : {v}")
+        elif type(v) == int:
+            exif[k] = ligne[1].text_input(f"{k} (nombre entier), donnée originale : {v}")
 
     st.form_submit_button('Enregistrer la photo avec les nouvelles données')
 
 
-exif = img.getexif()
+
 # exif.get_ifd(34665)[36868] = "2023:01:01 00:00:00"
 # img.save('test.jpg', exif = exif)
 
 # liste des données exif disponibles (code, libellé et valeur)
-dic_exif = {}
 for k, v in exif.items():
-    print('tag', k, 'label', ExifTags.TAGS.get(k, k), 'value', v)
-    toto = type(k)
-
-print(toto)
+    print('tag', k, 'label', ExifTags.TAGS.get(k, k), 'value', v, 'type', type(v))
