@@ -15,6 +15,15 @@ from PIL import Image, ExifTags
 import io
 import requests
 
+CoordGPSNice = {
+    'GPSLatitudeRef': 'N', 
+    'GPSLatitude': (41.0, 47.0, 2.17),
+    'GPSLongitudeRef': 'W', 
+    'GPSLongitude': (93.0, 46.0, 42.09)}
+
+# Affichage titre
+st.title("Carnet de voyage")
+
 # Affichage image légendée à partir du repo github
 # https://pillow.readthedocs.io/en/stable/PIL.html#PIL.UnidentifiedImageError
 url_img = ('https://github.com/Marmonie/OIC/blob/main/essais/P7070925.jpg?raw=true')
@@ -25,48 +34,48 @@ if r_img.status_code == 200:
 #img = Image.open(r_img.raw)
 st.image(img, caption='Marmonie voyage')
 
-## Formulaire st.form
-#with st.form("form : modif des données exif"):
-    # Première ligne
-#    auteur = st.columns([1, 3])
-#    auteur[0].subheader('Auteur')
-#    aut = auteur[1].text_input('Qui a pris cette photo ?')
-
-    # Deuxième ligne
-#    date = st.columns([2, 3, 3])
-#    date[0].subheader('Date')
-#    jour = date[1].date_input('jour')
-#    heure = date[2].time_input('heure')
-
-    # Troisième ligne
-#    loc = st.columns([1, 1, 1, 1])
-#    loc[0].subheader('Localisation')
-#    lat = loc[1].text_input('latitude')
-#    lon = loc[2].text_input('longitude')
-#    alt = loc[3].text_input('altitude')
-
-#    st.form_submit_button('Enregistrer la photo avec les nouvelles données')
-
-
 exif = img.getexif()
-# dic_form = {} # finalement inutile, remplacé par 'ligne'
+GPS_tag = 0
+
+## Formulaire st.form
 with st.form("formulaire auto de modif des données dispo"):
+    st.header("Liste des métadonnées disponibles de l'image", divider="blue")
+    st.write(":gray[Entrer les nouvelles données dans les boîtes correspondantes]")
+    
     for k, v in exif.items():
         label = ExifTags.TAGS.get(k, k)
         ligne = st.columns([1, 1])
         ligne[0].subheader(label)
+
+        # Ajout coord GPS de Nice, https://exiftool.org/TagNames/EXIF.html
+        if label == 'GPSInfo':
+            exif[k] = CoordGPSNice
+            GPS_tag = k
+            print(GPS_tag)
+
+        # Seuls sont traités les paramètres de type chaînes et entiers
         if type(v) == str:
-            exif[k] = ligne[1].text_input(f"{k}, donnée originale : {v}")
+            exif[k] = ligne[1].text_input(f"{label}, donnée originale : {v}")
+        
         elif type(v) == int:
             exif[k] = ligne[1].text_input(f"{k} (nombre entier), donnée originale : {v}")
+            # Les entiers sont convertis si possible, sinon on garde la valeur d'origine
+            try:
+                exif[k] = int(exif[k])
+            except:
+                exif[k] = v
 
+        
     st.form_submit_button('Enregistrer la photo avec les nouvelles données')
 
-
-
 # exif.get_ifd(34665)[36868] = "2023:01:01 00:00:00"
-# img.save('test.jpg', exif = exif)
+img.save('test.jpg', exif = exif)
 
 # liste des données exif disponibles (code, libellé et valeur)
-for k, v in exif.items():
-    print('tag', k, 'label', ExifTags.TAGS.get(k, k), 'value', v, 'type', type(v))
+#for k, v in exif.items():
+#    print('tag', k, 'label', ExifTags.TAGS.get(k, k), 'value', v, 'type', type(v))
+
+# Pour connaître les données exif relatives à la position GPS
+#loc = ExifTags.GPSTAGS
+#print(loc)
+#{0: 'GPSVersionID', 1: 'GPSLatitudeRef', 2: 'GPSLatitude', 3: 'GPSLongitudeRef', 4: 'GPSLongitude', 5: 'GPSAltitudeRef', 6: 'GPSAltitude', 7: 'GPSTimeStamp', 8: 'GPSSatellites', 9: 'GPSStatus', 10: 'GPSMeasureMode', 11: 'GPSDOP', 12: 'GPSSpeedRef', 13: 'GPSSpeed', 14: 'GPSTrackRef', 15: 'GPSTrack', 16: 'GPSImgDirectionRef', 17: 'GPSImgDirection', 18: 'GPSMapDatum', 19: 'GPSDestLatitudeRef', 20: 'GPSDestLatitude', 21: 'GPSDestLongitudeRef', 22: 'GPSDestLongitude', 23: 'GPSDestBearingRef', 24: 'GPSDestBearing', 25: 'GPSDestDistanceRef', 26: 'GPSDestDistance', 27: 'GPSProcessingMethod', 28: 'GPSAreaInformation', 29: 'GPSDateStamp', 30: 'GPSDifferential', 31: 'GPSHPositioningError'}
