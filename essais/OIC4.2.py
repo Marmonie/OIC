@@ -49,7 +49,7 @@ with st.form("formulaire auto de modif des données dispo"):
 
         # Ajout coord GPS de Nice, https://exiftool.org/TagNames/EXIF.html
         if label == 'GPSInfo':
-            exif[k] = CoordGPSNice
+        #    exif[k] = CoordGPSNice
             GPS_tag = k
             print(GPS_tag)
 
@@ -68,7 +68,26 @@ with st.form("formulaire auto de modif des données dispo"):
         
     st.form_submit_button('Enregistrer la photo avec les nouvelles données')
 
-# exif.get_ifd(34665)[36868] = "2023:01:01 00:00:00"
+"""On pourrait intégrer quelques données supplémentaires (hauteur et largeur image par exemple) en utilisant les IFD"""
+# for ifd_id in ExifTags.IFD:
+#     try:
+#         ifd = exif.get_ifd(ifd_id)
+#         for k, v in ifd.items():
+#             label = ExifTags.TAGS.get(k, k)
+#             print(k, label, v)
+#     except KeyError:
+#         pass
+
+# Pour consulter les données de localisation
+# ifd = exif.get_ifd(ExifTags.IFD.GPSInfo)
+# for k, v in ifd.items():
+#     label = ExifTags.GPSTAGS.get(k, k)
+#     print(k, label, v)
+
+# Modif des coord GPS (34853 = GPSInfo)
+for k, v in CoordGPSNice.items():
+    exif.get_ifd(34853)[k] = v
+
 img.save('test.jpg', exif = exif)
 
 # liste des données exif disponibles (code, libellé et valeur)
