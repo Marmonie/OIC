@@ -104,7 +104,7 @@ img.save('test.jpg', exif=exif)
 
 # Deuxième partie : carte des voyages
 st.header("Mes voyages hors France")
-with open("https://github.com/Marmonie/OIC/blob/main/essais/voyages.json") as file:
+with open("voyages.json") as file:
     liste_voyages = json.load(file)
 
 jointures = [[coord_Nice, dest['coord']] for dest in liste_voyages]
