@@ -1,0 +1,24 @@
+[
+        {"ville": "Saint-Petersbourg", "coord": [59.9371, 30.3528], "commentaire": "croisière"},
+        {"ville": "Cork", "coord": [51.8858, -8.4725], "commentaire": "voyage linguistique"},
+        {"ville": "Faro", "coord": [37.0378, -8.0250], "commentaire": "kitesurf"},
+        {"ville": "Toronto", "coord": [43.8744, -79.2871], "commentaire": "voyage linguistique"},
+        {"ville": "Ottawa", "coord": [45.4583, -75.6430], "commentaire": "tourisme"},
+        {"ville": "Tulum", "coord": [20.2150, -87.4292], "commentaire": "couleurs incroyables"},
+        {"ville": "Rome", "coord": [41.9006, 12.4826], "commentaire": "tourisme"},
+        {"ville": "Kuweit City", "coord": [29.3679, 47.9752], "commentaire": "visite à la famille"},
+        {"ville": "Moscou", "coord": [55.7500, 37.6151], "commentaire": "voyage linguistique"},
+        {"ville": "Tibau do Sul", "coord": [-6.1876, -35.0921], "commentaire": "kitesurf"},
+        {"ville": "Garachico", "coord": [28.3727, -16.7656], "commentaire": "randonnées"},
+        {"ville": "Essaouira", "coord": [31.5094, -9.7675], "commentaire": "kitesurf"},
+        {"ville": "Prague", "coord": [50.0789, 14.4399], "commentaire": "tourisme"},
+        {"ville": "Bois Chéri", "coord": [-20.4291, 57.5351], "commentaire": "tourisme"},
+        {"ville": "Anse Goéland", "coord": [-19.7056, 63.3798], "commentaire": "ils parlent français !"},
+        {"ville": "Bergen", "coord": [60.3998, 5.3147], "commentaire": "randonnées"},
+        {"ville": "Oslo", "coord": [59.9178, 10.6866], "commentaire": "tourisme"},
+        {"ville": "Saint-Andrews", "coord": [56.3434, -2.8037], "commentaire": "voyage linguistique"},
+        {"ville": "Port Ellen", "coord": [55.6297, -6.1845], "commentaire": "whisky"},
+        {"ville": "Dublin", "coord": [53.3449, -6.2670], "commentaire": "voyage linguistique"},
+        {"ville": "Oxford", "coord": [51.7527, -1.2575], "commentaire": "voyage linguistique"}
+
+    ]
