@@ -20,7 +20,5 @@
                 {"ville": "Saint-Andrews", "coord": [56.3434, -2.8037], "commentaire": "voyage linguistique"},
                 {"ville": "Port Ellen", "coord": [55.6297, -6.1845], "commentaire": "whisky"},
                 {"ville": "Dublin", "coord": [53.3449, -6.2670], "commentaire": "voyage linguistique"},
-                {"ville": "Oxford", "coord": [51.7527, -1.2575], "commentaire": "voyage linguistique"}
-
-        ]
+                {"ville": "Oxford", "coord": [51.7527, -1.2575], "commentaire": "voyage linguistique"}]
 }
