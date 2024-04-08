@@ -18,13 +18,6 @@ import json
 import folium
 from streamlit_folium import folium_static
 
-# # coordonnées en rational64u (degré, minutes, secondes) pour EXIF
-# CoordGPSNice = {
-#     1: 'N',  # GPSLatitudeRef
-#     2: (43.0, 42.0, 12.0),  # GPSLatitude
-#     3: 'E',  # GPSLongitudeRef
-#     4: (7.0, 17.0, 28.0)}  # GPSLongitude
-
 # coordonnées en décimal, pour folium (= degré + min/60 + sec/3600)
 coord_Nice = 43.7034, 7.2911
 
@@ -166,10 +159,8 @@ folium.Marker(
 # Affichage de la carte folium dans l'appli streamlit
 folium_static(carte_img)
 
-# TODO : requête pour accéder à fichier json sur github
-
 # Quatrième partie : carte des voyages
-st.header("Mes voyages hors France")
+st.header("Les Voyages de Marmonie à l'étranger")
 r_voyages = requests.get(url_voyages)
 if r_voyages.status_code == 200:
     liste_voyages = r_voyages.json()["voyages"]
