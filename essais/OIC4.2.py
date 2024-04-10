@@ -28,7 +28,7 @@ def trunc(x):
     """
     Ne conserve que la partie entière d'un nombre décimal
     :param x: nombre décimal (ex: 4.5)
-    :return: 4.0
+    :return: la partie entière de ce nombre sous forme décimale (ex: 4.0)
     """
     lst_str = str(x).split('.')
     return float(lst_str[0])
@@ -103,7 +103,7 @@ with st.form("formulaire auto de modif des données dispo"):
             elif type(v) == int:
                 exif[k] = ligne[1].number_input(f"{label} (nombre entier)", value=v)
 
-    # Deuxième partie : choix nouvelles coordonnées GPS (34853 = GPSInfo) https://exiftool.org/TagNames/EXIF.html
+    # Deuxième partie : choix nouvelles coordonnées GPS (34853 = GPSInfo)
     ligne_gps = st.columns([2, 1, 1])
     ligne_gps[0].subheader("Données GPS")
     img_lat = ligne_gps[1].number_input(f"Latitude (décimal)", min_value=-90.0, max_value=90.0, value=coord_Nice[0])
